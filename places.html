@@ -35,38 +35,41 @@
             })
         });
 
-        // Şehirlerin koordinatları
+        // Şehirlerin koordinatları ve isimleri
         var locations = [
             { name: 'İstanbul', coords: [28.976, 41.005] },
             { name: 'İzmir', coords: [27.144, 38.419] },
             { name: 'Antalya', coords: [30.695, 36.909] },
-            { name: 'Çanakkale', coords: [26.414, 40.155] }, 
-            { name: 'Sakarya', coords: [30.405, 40.764] } 
+            { name: 'Çanakkale', coords: [26.414, 40.155] },
+            { name: 'Sakarya', coords: [30.405, 40.764] }
         ];
 
         // İşaretçileri ekle
+        var markers = new ol.layer.Vector({
+            source: new ol.source.Vector()
+        });
+        map.addLayer(markers);
+
         locations.forEach(function(location) {
             var marker = new ol.Feature({
                 geometry: new ol.geom.Point(ol.proj.fromLonLat(location.coords)),
                 name: location.name
             });
 
-            // İşaretçiyi bir katmana ekle
-            var vectorSource = new ol.source.Vector({
-                features: [marker]
-            });
+            markers.getSource().addFeature(marker);
+        });
 
-            var markerLayer = new ol.layer.Vector({
-                source: vectorSource,
-                style: new ol.style.Style({
-                    image: new ol.style.Icon({
-                        anchor: [0.5, 1],
-                        src: 'https://openlayers.org/en/v6.13.0/examples/data/icon.png' // İşaretçi ikonu
-                    })
-                })
-            });
+        // Marker simgesi
+        var iconStyle = new ol.style.Style({
+            image: new ol.style.Icon({
+                anchor: [0.5, 1],
+                src: 'https://openlayers.org/en/v6.13.0/examples/data/icon.png' // İşaretçi ikonu
+            })
+        });
 
-            map.addLayer(markerLayer);
+        // Her bir işaretçi için stil uygulama
+        markers.getSource().getFeatures().forEach(function(marker) {
+            marker.setStyle(iconStyle);
         });
     </script>
 </body>

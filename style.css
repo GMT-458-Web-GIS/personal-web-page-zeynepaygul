@@ -263,4 +263,36 @@ nav .menu .menu-button:hover {
     transform: scale(1.1); /* Üzerine gelindiğinde ikon büyüsün */
 }
 
+/* Tablo stilleri */
+.city-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
 
+.city-table th, .city-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.city-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.city-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.city-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Başlık stil */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+}

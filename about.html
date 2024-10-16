@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        /* Tablonun stil ayarları */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+            opacity: 0; /* Başlangıçta gizle */
+            transition: opacity 0.5s; /* Opaklık geçişi */
+        }
+
+        /* Yazılar görünmeye başladığında */
+        .fade-in {
+            opacity: 1; /* Tam görünür hale getir */
+        }
+
+        /* Her bir hücre için animasyon süresi */
+        .cell-1 { transition-delay: 0.5s; }
+        .cell-2 { transition-delay: 1s; }
+        .cell-3 { transition-delay: 1.5s; }
+        .cell-4 { transition-delay: 2s; }
+        .cell-5 { transition-delay: 2.5s; }
+    </style>
+
+</head>
+<body>
+    <header class="container">
+        <nav>
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="icons8-daisy-60.png" border="0" width="80" height="80" alt="Daisy Logo" />
+                </a>
+                <div class="logo-text">
+                    <a href="index.html">
+                        <span>Zeynep Aygül</span>
+                    </a>
+                </div>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="home.html">Home</a></li> 
+                    <li><a href="about.html">About</a></li> <!-- Şu an bu sayfadasınız -->
+                    <li><a href="places.html">Places</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="container content">
+        <h1>About the Cities I've Visited</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>City</th>
+                    <th>Thoughts</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="cell-1">Istanbul</td>
+                    <td class="cell-1">A fascinating city with historical and cultural richness.</td>
+                </tr>
+                <tr>
+                    <td class="cell-2">Izmir</td>
+                    <td class="cell-2">A great place with beautiful beaches and warm-hearted people.</td>
+                </tr>
+                <tr>
+                    <td class="cell-3">Antalya</td>
+                    <td class="cell-3">A paradise for sun, sea, and vacation!</td>
+                </tr>
+                <tr>
+                    <td class="cell-4">Canakkale</td>
+                    <td class="cell-4">A city filled with historical sites. Worth visiting.</td>
+                </tr>
+                <tr>
+                    <td class="cell-5">Sakarya</td>
+                    <td class="cell-5">Wonderful nature, ideal for hiking and outdoor activities.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <script>
+        // Sayfa açıldığında animasyonu başlat
+        window.onload = function() {
+            const cells = document.querySelectorAll('td, th');
+            cells.forEach((cell, index) => {
+                setTimeout(() => {
+                    cell.classList.add('fade-in'); // Animasyonu başlat
+                }, index * 500); // Her bir hücre için zamanlayıcı ayarla
+            });
+        };
+    </script>
+</body>
+</html>
