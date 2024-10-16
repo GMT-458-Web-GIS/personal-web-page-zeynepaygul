@@ -262,48 +262,5 @@ nav .menu .menu-button:hover {
 .social-icon:hover {
     transform: scale(1.1); /* Üzerine gelindiğinde ikon büyüsün */
 }
-/* Genel Stil */
-body {
-    font-family: 'Poppins', sans-serif;
-    background-image: url('sehir.jpg');
-    background-size: cover;
-    background-position: center;
-    color: #333;
-}
-
-/* Tablo Stili */
-.city-table {
-    width: 100%;
-    max-width: 800px;
-    margin: 50px auto;
-    border-collapse: collapse;
-    background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.city-table thead th {
-    background-color: #047fa9;
-    color: white;
-    padding: 10px;
-    text-align: left;
-    font-size: 18px;
-}
-
-.city-table tbody td {
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-}
-
-.city-table tbody tr:hover {
-    background-color: rgba(0, 128, 255, 0.1);
-}
-
-/* İçerik Başlıkları */
-.content h1 {
-    text-align: center;
-    margin-top: 50px;
-    font-size: 36px;
-    color: #047fa9;
-}
 
 
